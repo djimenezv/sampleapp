@@ -3,7 +3,21 @@ pipeline {
   stages {
     stage('Greeting') {
       steps {
-        echo 'Hello World DevOps!'
+        parallel(
+          "Greeting": {
+            echo 'Hello World DevOps!'
+            
+          },
+          "Getting latest version": {
+            git 'https://github.com/djimenezv/sampleapp.git'
+            
+          }
+        )
+      }
+    }
+    stage('Unit Testing') {
+      steps {
+        sh 'mvn clean test'
       }
     }
   }
