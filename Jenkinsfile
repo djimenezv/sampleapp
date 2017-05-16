@@ -24,7 +24,7 @@ pipeline {
     stage('Functional test') {
       steps {
         sh 'mvn verify -DskipUts'
-        junit '/target/failsafe-reports/*.xml'
+        junit 'target/failsafe-reports/*.xml'
       }
     }
   }
