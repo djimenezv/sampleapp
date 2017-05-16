@@ -37,5 +37,10 @@ pipeline {
         sh 'mvn clean package -DskipTests'
       }
     }
+    stage('') {
+      steps {
+        archiveArtifacts 'target/*.jar'
+      }
+    }
   }
 }
