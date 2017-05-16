@@ -38,10 +38,5 @@ pipeline {
         archiveArtifacts 'target/*.jar'
       }
     }
-    stage('error') {
-      steps {
-        archiveArtifacts 'target/*.jar'
-      }
-    }
   }
 }
