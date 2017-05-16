@@ -21,7 +21,7 @@ pipeline {
         junit 'target/surefire-reports/*.xml'
       }
     }
-    stage('Functional test') {
+    stage('Integration test') {
       steps {
         sh 'mvn verify -DskipUts'
         junit 'target/failsafe-reports/*.xml'
