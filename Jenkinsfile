@@ -32,5 +32,10 @@ pipeline {
         sh 'mvn -DskipUTs checkstyle:checkstyle pmd:pmd findbugs:findbugs'
       }
     }
+    stage('Package') {
+      steps {
+        sh 'mvn clean package -DskipTests'
+      }
+    }
   }
 }
