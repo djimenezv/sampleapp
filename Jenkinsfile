@@ -18,7 +18,7 @@ pipeline {
     stage('Unit Testing') {
       steps {
         sh 'mvn clean test'
-        junit 'target/sure-fire/reports/*'
+        junit 'target/surefire-reports/*'
       }
     }
   }
