@@ -20,7 +20,7 @@ public class WebAppIT {
 		WebApp.main();
 	}
 	
-	@Test
+	@Test @Ignore
 	public void itShowsTheGreetingMessage() throws Exception{
 		//When
 		Response response = Request.Get("http://localhost:4567").execute();
@@ -32,7 +32,7 @@ public class WebAppIT {
 	}
 	
 	//A failing test
-	@Test
+	@Test @Ignore
 	public void itHasAFailingTest(){
 		fail("What the hell happened in the Integration Test?");
 	}
